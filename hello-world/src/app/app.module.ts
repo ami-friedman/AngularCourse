@@ -8,6 +8,7 @@ import { AuthorComponent } from './author/author.component';
 import { LikeComponent } from './like/like.component';
 import { CaseComponent } from './case/case.component';
 import { TitlecasePipe } from './titlecase.pipe';
+import { ZippyComponent } from './zippy/zippy.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { TitlecasePipe } from './titlecase.pipe';
     AuthorComponent,
     LikeComponent,
     CaseComponent,
-    TitlecasePipe
+    TitlecasePipe,
+    ZippyComponent
   ],
   imports: [
     BrowserModule,
