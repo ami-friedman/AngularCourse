@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'zippy',
@@ -6,17 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./zippy.component.css']
 })
 export class ZippyComponent {
-  panel = {
-    title: 'Title',
-    body: 'Body',
-  };
+  @Input('title') title;
 
-  clicked = false;
-
-  constructor() { }
+  droppedDown = false;
 
   onClick() {
-    this.clicked = !this.clicked;
+    this.droppedDown = !this.droppedDown;
   }
 
 

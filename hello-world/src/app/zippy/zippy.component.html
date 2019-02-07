@@ -1,19 +1,14 @@
 <div class="container">
     <div class="panel panel-default">
-        <div *ngIf='clicked; then withTitle else noTitle'></div>
-        <ng-template #withTitle>
             <div class="panel-heading" (click)='onClick()'>
-                <h3 class="panel-title">{{ panel.title }}<span class="glyphicon glyphicon-menu-up pull-right"></span></h3>
+                <h3 class="panel-title">{{ title }}<span class="glyphicon pull-right" [ngClass]='{
+                  "glyphicon-menu-down": droppedDown,
+                  "glyphicon-menu-up": !droppedDown
+                }'></span></h3>
               </div>
-              <div class="panel-body">
-                {{ panel.body }}
+              <div class="panel-body" [hidden]='!droppedDown'>
+                <ng-content></ng-content>
               </div>
-        </ng-template>
-        <ng-template #noTitle>
-            <div class="panel-heading" (click)='onClick()'>
-                {{ panel.title }}<span class="glyphicon glyphicon-menu-down pull-right"></span>
-             </div>
-        </ng-template>
       </div>
 </div>
 
