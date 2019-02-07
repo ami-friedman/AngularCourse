@@ -1,3 +1,4 @@
 
 
-<span class='glyphicon' [ngClass]='this.currentClass' (click)='click()'></span>
+<span id="like-icon" class='glyphicon glyphicon-heart' [class.active]='isLiked' (click)='onClick()'></span>
+<span id='likes-count'> {{ likeCount }} </span>

@@ -1,3 +1,19 @@
 span {
-  font-size: 2.0em;
+  font-size: 4.0em;
+}
+
+#likes-count {
+  font-size: 3.0em;
+}
+
+#like-icon {
+  cursor: pointer;
+}
+
+.glyphicon {
+  color: #ccc;
+}
+
+.active {
+  color: deeppink;
 }
