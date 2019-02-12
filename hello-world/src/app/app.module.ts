@@ -1,6 +1,6 @@
 import { AuthorService } from './author.service';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
@@ -10,11 +10,13 @@ import { CaseComponent } from './case/case.component';
 import { TitlecasePipe } from './titlecase.pipe';
 import { ZippyComponent } from './zippy/zippy.component';
 import { CourseFormComponent } from './course-form/course-form.component';
+import { SignupFormComponent } from './signup-form/signup-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthorComponent,
+    SignupFormComponent,
     LikeComponent,
     CaseComponent,
     TitlecasePipe,
@@ -23,7 +25,8 @@ import { CourseFormComponent } from './course-form/course-form.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     AuthorService
