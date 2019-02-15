@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { UsernameValidator } from './username.validators';
 
 
@@ -9,17 +9,21 @@ import { UsernameValidator } from './username.validators';
   styleUrls: ['./signup-form.component.css']
 })
 export class SignupFormComponent {
-  form = new FormGroup({
-    account: new FormGroup({
-      username: new FormControl('', [
-        Validators.required,
-        Validators.minLength(3),
-        UsernameValidator.cannotContainSpace
-      ],
-        UsernameValidator.shouldBeUnique),
-      password: new FormControl('', Validators.required)
-    })
-  });
+  form;
+
+  constructor(fb: FormBuilder) {
+    this.form = fb.group({
+      account: fb.group({
+        username: fb.control('', [
+          Validators.required,
+          Validators.minLength(3),
+          UsernameValidator.cannotContainSpace
+        ],
+          UsernameValidator.shouldBeUnique),
+        password: fb.control('', Validators.required),
+      })
+    });
+  }
 
   get username() {
     return this.form.get('account.username');
