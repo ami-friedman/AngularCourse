@@ -1,5 +1,5 @@
 import { PasswordValidator } from './password.validator';
-import { FormBuilder, Validators, AbstractControl, ValidationErrors, FormControl } from '@angular/forms';
+import { FormBuilder, Validators, AbstractControl, ValidationErrors, FormControl, FormGroup } from '@angular/forms';
 import { Component } from '@angular/core';
 
 
@@ -9,13 +9,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./password-changer.component.css']
 })
 export class PasswordChangerComponent {
-  form;
+  form: FormGroup;
 
   constructor(fb: FormBuilder) {
     this.form = fb.group({
       old: ['', Validators.required, PasswordValidator.correctPassword ],
       new: ['', Validators.required],
       confirm: ['', Validators.required],
+    }, {
+      validators: PasswordValidator.passwordsMatch
     });
     console.log(this.form);
    }
