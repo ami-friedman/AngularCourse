@@ -13,6 +13,8 @@ import { CourseFormComponent } from './course-form/course-form.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
 import { NewCourseFormComponent } from './new-course-form/new-course-form.component';
 import { PasswordChangerComponent } from './password-changer/password-changer.component';
+import { PostsComponent } from './posts/posts.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,12 +27,14 @@ import { PasswordChangerComponent } from './password-changer/password-changer.co
     ZippyComponent,
     CourseFormComponent,
     NewCourseFormComponent,
-    PasswordChangerComponent
+    PasswordChangerComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     AuthorService
