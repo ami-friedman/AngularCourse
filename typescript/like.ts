@@ -1,3 +1,9 @@
+function Component(target) {
+  console.log(target);
+  target._isSelected = true;
+}
+
+@Component
 export class Like {
   private _isSelected: boolean;
 
@@ -17,7 +23,5 @@ export class Like {
     this._isSelected = !this._isSelected;
     this._likeCount += (this._isSelected)? 1 : -1;
   }
-
-
 
 }
