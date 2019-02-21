@@ -8,17 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArchiveComponent implements OnInit {
 
-  year: string;
-  month: string;
+  year: number;
+  month: number;
 
   constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    this.route.paramMap
-    .subscribe( params => {
-      this.year = params.get('year');
-      this.month = params.get('month');
-    });
+    const params = this.route.snapshot.paramMap;
+    this.year = +params.get('year');
+    this.month = +params.get('month');
   }
 
   viewAll() {

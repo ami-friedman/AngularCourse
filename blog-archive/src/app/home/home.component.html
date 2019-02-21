@@ -2,6 +2,6 @@
 
 <ul>
   <li *ngFor="let blog of blogs">
-    <a [routerLink]="['/archive', blog.year, blog.month]"> {{ blog.year }}/{{ blog.month }}</a>
+    <a [routerLink]="['/archive', blog.year, blog.month]"> {{ blog.year + '/' + blog.month }}</a>
   </li>
 </ul>
