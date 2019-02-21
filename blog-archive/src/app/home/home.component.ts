@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
     },
   ];
 
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  constructor() { }
 
   ngOnInit() {
   }
