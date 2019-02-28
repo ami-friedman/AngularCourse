@@ -6,13 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'material-demo';
-  isChecked = false;
+ colors = [
+   { id: 1, name: 'Red'},
+   { id: 2, name: 'Green'},
+   { id: 3, name: 'Blue'},
+ ];
 
-  onChange($event) {
-    console.log($event);
-    this.isChecked = !this.isChecked;
-  }
-
+ color = 2;
 
 }

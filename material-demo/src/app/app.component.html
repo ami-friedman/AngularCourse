@@ -1,8 +1,10 @@
-<mat-checkbox
-#showDetails
-[value]=""
-[checked]="isChecked"
-(change)="onChange($event)"
->Subscribe to newsletter</mat-checkbox>
-
-<div *ngIf="showDetails.checked">Details...</div>
+<mat-form-field hintLabel="Max 10 characters">
+    <input 
+    ngModel
+    name="food"
+    required
+    matInput placeholder="Favorite food" value="1000">
+    <span matPrefix>$</span>
+    <span matSuffix>Poop</span>
+    <mat-error>This is a required field</mat-error>
+</mat-form-field>
